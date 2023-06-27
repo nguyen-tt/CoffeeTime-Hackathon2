@@ -8,7 +8,10 @@ export default function Header() {
       <div className="logo">LOGO</div>
       <nav className="navbar">
         <ul>
-          <NavLink to="/">
+          <NavLink
+            to="/"
+            className={location === "/page1" ? "navlink active" : "navlink"}
+          >
             <li>Home</li>
           </NavLink>
           <NavLink
