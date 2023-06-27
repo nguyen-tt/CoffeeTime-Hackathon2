@@ -8,6 +8,20 @@
     border: 1px solid black;
   }
   .navbar {
-    display: flex;
+    width: 50%;
+    ul {
+      display: flex;
+      justify-content: space-evenly;
+      list-style: none;
+    }
+    .navlink {
+      text-decoration: none;
+      color: black;
+      font-size: 2rem;
+    }
+    .navlink:hover,
+      .navlink.active {
+        color: white;
+  }
   }
 }
