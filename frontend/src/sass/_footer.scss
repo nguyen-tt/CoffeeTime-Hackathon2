@@ -1,0 +1,27 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  height: 20vh;
+  background-color: grey;
+  .footer-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  img {
+    width: 5rem;
+  }
+  .footer-text {
+    display: flex;
+    justify-content: space-evenly;
+    width: 70%;
+    font-size: 2rem;
+    margin: 2rem 0;
+  }
+  p {
+    font-size: 1.5rem;
+    font-style: italic;
+  }
+}
