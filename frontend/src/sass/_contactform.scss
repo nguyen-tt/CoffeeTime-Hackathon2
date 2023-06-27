@@ -1,0 +1,62 @@
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form-label {
+  margin-top: 1rem;
+}
+
+.form input {
+  margin: 10px;
+  border-radius: 30px;
+  width: 200px;
+  height: 35px;
+  padding-left: 26px;
+  border: 0;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  font-family: "Montserrat", sans-serif;
+  font-size: larger;
+  font-weight: bolder;
+  color: white;
+  background-color: gray;
+}
+
+textarea {
+  margin-top: 2rem;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 2rem;
+  border-width: 0.5rem;
+  border-color: grey;
+  font-size: larger;
+  font-weight: bolder;
+  padding: 1rem;
+  resize: none;
+}
+
+.contact-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  transition: all 0.5s ease;
+  color: white;
+  border: 3px solid grey;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1;
+  font-size: 16px;
+  background-color: grey;
+  padding: 12px;
+  outline: none;
+  border-radius: 5px;
+}
+
+.contact-btn:hover {
+  color: grey;
+  background-color: white;
+}
