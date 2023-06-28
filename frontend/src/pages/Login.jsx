@@ -63,60 +63,70 @@ export default function Login() {
   return (
     <>
       {Object.keys(currentUser).length && <Navigate to="/account" />}
-      <form className="account login" onSubmit={handleLogin} noValidate>
-        <h2>S’identifier</h2>
-        <p>
-          Tous les champs sont obligatoires
-          {invalidLogin && <span className="error">{invalidLogin}</span>}
-        </p>
-        <p>
-          <label htmlFor="login-email">
-            Adresse email
-            {invalidFields.includes("email") && (
-              <span className="error">
-                (une adresse email doit être saisie)
-              </span>
-            )}
-          </label>
-          <input
-            id="login-email"
-            name="email"
-            type="email"
-            value={email}
-            required
-            onChange={handleEmail}
-          />
-        </p>
-        <p>
-          <label htmlFor="login-password">
-            Mot de passe
-            {invalidFields.includes("password") && (
-              <span className="error">(un mot de passe doit être saisi)</span>
-            )}
-          </label>
-          <input
-            id="login-password"
-            name="password"
-            type="password"
-            value={password}
-            required
-            onChange={handlePassword}
-          />
-          <Link
-            to="/login/forgotten-password"
-            className="forgotten-password-link"
-          >
-            Mot de passe oublié&nbsp;?
-          </Link>
-        </p>
-        <p>
-          <input type="submit" value="Se connecter" />
-        </p>
-        <p>
-          Vous n’avez pas de compte&nbsp;?{" "}
-          <Link to="/signup">Créer un compte</Link>
-        </p>
-      </form>
+      <div className="account">
+        <form className="account-login" onSubmit={handleLogin} noValidate>
+          <h1>Connexion</h1>
+          <h2>
+            Tous les champs sont obligatoires
+            {invalidLogin && <span className="error">{invalidLogin}</span>}
+          </h2>
+          <p>
+            <label htmlFor="login-email">
+              {/* Adresse email */}
+              {invalidFields.includes("email") && (
+                <span className="error">
+                  (une adresse email doit être saisie)
+                </span>
+              )}
+            </label>
+            <input
+              id="login-email"
+              name="email"
+              type="email"
+              value={email}
+              placeholder="Adresse e-mail"
+              required
+              onChange={handleEmail}
+            />
+          </p>
+          <p>
+            <label htmlFor="login-password">
+              {/* Mot de passe */}
+              {invalidFields.includes("password") && (
+                <span className="error">(un mot de passe doit être saisi)</span>
+              )}
+            </label>
+            <input
+              id="login-password"
+              name="password"
+              type="password"
+              value={password}
+              placeholder="Mot de passe"
+              required
+              onChange={handlePassword}
+            />
+          </p>
+          <h2>
+            <Link
+              to="/login/forgotten-password"
+              className="forgotten-password-link"
+            >
+              Mot de passe oublié&nbsp;?
+            </Link>
+          </h2>
+          <p>
+            <input
+              className="connect-yourself"
+              type="submit"
+              value="Se connecter"
+            />
+          </p>
+          {/* <p>
+            Vous n’avez pas de compte&nbsp;?{" "}
+            <Link to="/signup">Créer un compte</Link>
+          </p> */}
+        </form>
+      </div>
     </>
   );
 }
