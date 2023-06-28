@@ -1,11 +1,15 @@
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: grey;
+  .top-header {
+    background-color: #00acb0;
+    height: 3vh;
+  }
+  .bottom-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
   .logo {
-    font-size: 2rem;
-    border: 1px solid black;
+    width: 25%;
   }
   .navbar {
     width: 50%;
@@ -16,12 +20,14 @@
     }
     .navlink {
       text-decoration: none;
-      color: black;
+      color: grey;
+      font-family: var(--font);
       font-size: 2rem;
+      font-weight: 700;
     }
     .navlink:hover,
     .navlink.active {
-      color: white;
+      color: #00acb0;
     }
   }
 }
