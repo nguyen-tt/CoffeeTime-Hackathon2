@@ -1,9 +1,59 @@
-CREATE TABLE item (
-  id int(11) UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  title varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE screen_sizes (
+    id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    size VARCHAR(255) NOT NULL,
+    size_value VARCHAR(255) NOT NULL
+) ENGINE = InnoDB CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
-INSERT INTO item (title) VALUES ('Stuff'), ('Doodads');
+INSERT INTO screen_sizes (size, size_value) VALUES ('6','40'),('7','44'),('8','49'),('9','53'); /* A VERIFIER LES VALEURS */
+
+CREATE TABLE ram_memories (
+    id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    memory_number VARCHAR(255) NOT NULL,
+    memory_value VARCHAR(255) NOT NULL
+) ENGINE = InnoDB CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+
+INSERT INTO ram_memories (memory_number, memory_value) VALUES ('1','30'),('2','40'),('3','50'),('4','60'),('6','70'),('8','80'),('12','90'); /* A VERIFIER LES VALEURS */
+
+CREATE TABLE storage_values (
+    id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    number_storage VARCHAR(255) NOT NULL,
+    storage_value VARCHAR(255) NOT NULL
+) ENGINE = InnoDB CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+
+INSERT INTO storage_values (number_storage,storage_value) VALUES ('16','31'),('32','45'),('65','66'); /* AJOUTER VALUE */
+
+CREATE TABLE states (
+    id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    state VARCHAR(255) NOT NULL,
+    weighting VARCHAR(255) NOT NULL
+) ENGINE = InnoDB CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+
+INSERT INTO states (state, weighting) VALUES ('Parfait', '0'), ('Très bon', '0.90'), ('Correct','0.8');
+
+CREATE TABLE smartphones (
+    id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    brand VARCHAR(255) NOT NULL,
+    model VARCHAR(255) NOT NULL,
+    ram VARCHAR(255) NOT NULL,
+    storage VARCHAR(255) NOT NULL,
+    screen VARCHAR(255) NOT NULL,
+    network VARCHAR(255) NOT NULL,
+    loader TINYINT(1) NOT NULL DEFAULT 1,
+    operating_system VARCHAR(255) NOT NULL,
+    operating_system_version VARCHAR(255) NOT NULL,
+    images VARCHAR(255) NOT NULL,
+    screen_size_id INT UNSIGNED, FOREIGN KEY (screen_size_id) REFERENCES screen_sizes(id),
+    ram_memory_id INT UNSIGNED, FOREIGN KEY (ram_memory_id) REFERENCES ram_memories(id),
+    storage_value_id INT UNSIGNED, FOREIGN KEY (storage_value_id) REFERENCES storage_values(id),
+    state_id INT UNSIGNED, FOREIGN KEY (state_id) REFERENCES states(id)
+)  ENGINE = InnoDB CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+
+INSERT INTO smartphones (brand, model, ram, storage, screen, network, operating_system, operating_system_version, images)
+VALUES ('Apple', 'Iphone 12 Pro','6','256','6', '5G', 'IOS', '16','iphone-12pro.jpg'),
+       ('Samsung', 'Galaxy S22 Ultra','12','256','6', '5G', 'Android', '13','samsung-galaxys22ultra.jpg'),
+       ('Google', 'Pixel 6 Pro','12','256','6', '5G', 'Android', '13','google-pixel6pro.jpg');
+
+
 
 CREATE TABLE users (
   id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -15,98 +65,3 @@ CREATE TABLE users (
   created DATETIME NOT NULL DEFAULT NOW()
 ) ENGINE = InnoDB CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
-INSERT INTO
-    users (
-        email,
-        password,
-        firstname,
-        lastname,
-        role
-    )
-VALUES (
-        'benoit.vandanjon@wildcodeschool.com',
-        '$argon2id$v=19$m=16384,t=2,p=1$k3aFXCpcjyZ2cHpcZPDw3w$gSJbTCadxNikkm/zhTb+IvPDDJyZe0LpZh+5bCE7X+g',
-        'Benoît',
-        'Vandanjon',
-        1
-    );
-
-INSERT INTO
-    users (
-        email,
-        password,
-        firstname,
-        lastname,
-        role
-    )
-VALUES (
-        'useradm.test@wildcodeschool.com',
-        '$argon2id$v=19$m=16384,t=2,p=1$k3aFXCpcjyZ2cHpcZPDw3w$gSJbTCadxNikkm/zhTb+IvPDDJyZe0LpZh+5bCE7X+g',
-        'User',
-        'Test',
-        1
-    );
-
-INSERT INTO
-    users (
-        email,
-        password,
-        firstname,
-        lastname,
-        role
-    )
-VALUES (
-        'user1.test@wildcodeschool.com',
-        '$argon2id$v=19$m=16384,t=2,p=1$k3aFXCpcjyZ2cHpcZPDw3w$gSJbTCadxNikkm/zhTb+IvPDDJyZe0LpZh+5bCE7X+g',
-        'User1',
-        'Test1',
-        0
-    );
-
-INSERT INTO
-    users (
-        email,
-        password,
-        firstname,
-        lastname,
-        role
-    )
-VALUES (
-        'user2.test2@wildcodeschool.com',
-        '$argon2id$v=19$m=16384,t=2,p=1$k3aFXCpcjyZ2cHpcZPDw3w$gSJbTCadxNikkm/zhTb+IvPDDJyZe0LpZh+5bCE7X+g',
-        'User2',
-        'Test2',
-        0
-    );
-
-INSERT INTO
-    users (
-        email,
-        password,
-        firstname,
-        lastname,
-        role
-    )
-VALUES (
-        'user3.test3@wildcodeschool.com',
-        '$argon2id$v=19$m=16384,t=2,p=1$k3aFXCpcjyZ2cHpcZPDw3w$gSJbTCadxNikkm/zhTb+IvPDDJyZe0LpZh+5bCE7X+g',
-        'User3',
-        'Test3',
-        0
-    );
-
-INSERT INTO
-    users (
-        email,
-        password,
-        firstname,
-        lastname,
-        role
-    )
-VALUES (
-        'user4.test4@wildcodeschool.com',
-        '$argon2id$v=19$m=16384,t=2,p=1$k3aFXCpcjyZ2cHpcZPDw3w$gSJbTCadxNikkm/zhTb+IvPDDJyZe0LpZh+5bCE7X+g',
-        'User4',
-        'Test4',
-        0
-    );
