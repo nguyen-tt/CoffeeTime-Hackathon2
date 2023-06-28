@@ -1,7 +1,7 @@
 .footer {
   display: flex;
   justify-content: center;
-  background-color: grey;
+  background-color: #00acb0;
   padding: 2rem 0;
   .footer-block {
     display: flex;
@@ -9,6 +9,8 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    color: white;
+    font-family: var(--font);
   }
   img {
     width: 5rem;
