@@ -12,7 +12,7 @@ export default function Adding() {
             Marque
             <br />
             <select className="maker-select">
-            <option className="choose" disabled="true" value="">
+              <option className="choose" disabled="true" value="">
                 Choisir
               </option>
               <option value="iphone">iPhone</option>
@@ -48,7 +48,7 @@ export default function Adding() {
             RAM
             <br />
             <select className="maker-select">
-            <option className="choose" disabled="true" value="">
+              <option className="choose" disabled="true" value="">
                 Choisir
               </option>
               <option value="---">---</option>
