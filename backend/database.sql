@@ -65,3 +65,34 @@ CREATE TABLE users (
   created DATETIME NOT NULL DEFAULT NOW()
 ) ENGINE = InnoDB CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
+INSERT INTO
+    users (
+        email,
+        password,
+        firstname,
+        lastname,
+        role
+    )
+VALUES (
+        'benoit.vandanjon@wildcodeschool.com',
+        '123456',
+        'Benoît',
+        'Vandanjon',
+        1
+    );
+
+INSERT INTO
+    users (
+        email,
+        password,
+        firstname,
+        lastname,
+        role
+    )
+VALUES (
+        'anthony.gorski@wildcodeschool.com',
+        '123456',
+        'Anthony',
+        'Gorski',
+        1
+    );
