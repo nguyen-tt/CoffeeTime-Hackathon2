@@ -23,9 +23,9 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/page1" element={<Page1 />} />
-            <Route path="/page2" element={<Page2 />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/add" element={<Page1 />} />
+            <Route path="/data" element={<Page2 />} />
+            <Route path="/faq" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
