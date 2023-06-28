@@ -1,0 +1,33 @@
+.header {
+  .top-header {
+    background-color: #00acb0;
+    height: 3vh;
+  }
+  .bottom-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    width: 25%;
+  }
+  .navbar {
+    width: 50%;
+    ul {
+      display: flex;
+      justify-content: space-evenly;
+      list-style: none;
+    }
+    .navlink {
+      text-decoration: none;
+      color: grey;
+      font-family: var(--font);
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    .navlink:hover,
+    .navlink.active {
+      color: #00acb0;
+    }
+  }
+}

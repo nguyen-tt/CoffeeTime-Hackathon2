@@ -1,12 +1,38 @@
-import Home from "./pages/Home";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import "./App.css";
+import Page1 from "./pages/Page1";
+import Page2 from "./pages/Page2";
+import Contact from "./pages/Contact";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
+import NotFound from "./pages/NotFound";
+
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
+import { CurrentUserProvider } from "./contexts/CurrentUser";
+
+import "./styles.scss";
 
 function App() {
   return (
     <div className="App">
-      <Home />
-      <p>coucou</p>
+      <CurrentUserProvider>
+        <Router>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/add" element={<Page1 />} />
+            <Route path="/data" element={<Page2 />} />
+            <Route path="/faq" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
+          </Routes>
+          <Footer />
+        </Router>
+      </CurrentUserProvider>
     </div>
   );
 }

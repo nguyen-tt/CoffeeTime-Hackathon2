@@ -1,0 +1,29 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  background-color: #00acb0;
+  padding: 2rem 0;
+  .footer-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: white;
+    font-family: var(--font);
+  }
+  img {
+    width: 5rem;
+  }
+  .footer-text {
+    display: flex;
+    justify-content: space-evenly;
+    width: 70%;
+    font-size: 2rem;
+    margin: 2rem 0;
+  }
+  p {
+    font-size: 1.5rem;
+    font-style: italic;
+  }
+}
