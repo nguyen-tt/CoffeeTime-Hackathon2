@@ -16,7 +16,7 @@ export default function Header() {
           <ul>
             <NavLink
               to="/add"
-              className={location === "/add" ? "navlink active" : "navlink"}
+              className={location === "/adding" ? "navlink active" : "navlink"}
             >
               <li>Ajout</li>
             </NavLink>

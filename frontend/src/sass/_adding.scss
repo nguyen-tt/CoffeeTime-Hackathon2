@@ -1,0 +1,44 @@
+.container {
+  grid-template-columns: 100px 50px 100px;
+  grid-template-rows: 80px auto 80px; 
+  column-gap: 10px;
+  row-gap: 15px;
+}
+
+.phone-spec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+    margin-top: 5rem;
+    font-size: 3rem;
+}
+
+.phone-form {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.maker-div {
+    margin-top: 10rem;
+}
+
+.maker-select {
+    margin-left: 2rem;
+    border-radius: 6px;
+    height: 3rem;
+    width: 30rem;
+    padding-left: 2rem;
+    background-color: white;
+    color: #00ACB0;
+}
+
+.choose {
+    color: grey;
+}
+
+.maker {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2rem;
+    margin-left: 5rem;
+}
