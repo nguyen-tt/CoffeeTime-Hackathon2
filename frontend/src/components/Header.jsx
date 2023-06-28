@@ -15,10 +15,10 @@ export default function Header() {
             <li>Home</li>
           </NavLink>
           <NavLink
-            to="/page1"
-            className={location === "/page1" ? "navlink active" : "navlink"}
+            to="/adding"
+            className={location === "/adding" ? "navlink active" : "navlink"}
           >
-            <li>Page 1</li>
+            <li>Ajout</li>
           </NavLink>
           <NavLink
             to="/page2"
