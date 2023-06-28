@@ -1,0 +1,27 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: grey;
+  .logo {
+    font-size: 2rem;
+    border: 1px solid black;
+  }
+  .navbar {
+    width: 50%;
+    ul {
+      display: flex;
+      justify-content: space-evenly;
+      list-style: none;
+    }
+    .navlink {
+      text-decoration: none;
+      color: black;
+      font-size: 2rem;
+    }
+    .navlink:hover,
+    .navlink.active {
+      color: white;
+    }
+  }
+}
