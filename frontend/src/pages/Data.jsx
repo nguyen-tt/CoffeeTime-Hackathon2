@@ -3,18 +3,32 @@ import axios from "axios";
 
 import CurrentUserContext from "../contexts/CurrentUser";
 
-export default function Page2() {
+export default function Data() {
   const [phones, setPhones] = useState([]);
+  const [filteredPhones, setFilteredPhones] = useState([]);
+  const [selectedBrand, setSelectedBrand] = useState("");
   const { currentUser } = useContext(CurrentUserContext);
 
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_BACKEND_URL}/smartphones`)
-      .then((res) => setPhones(res.data))
+      .then((res) => {
+        setPhones(res.data);
+        setFilteredPhones(res.data);
+      })
       .catch((err) => {
         console.error(err);
       });
   }, []);
+
+  useEffect(() => {
+    let filtered = phones;
+
+    if (selectedBrand !== "") {
+      filtered = filtered.filter((phone) => phone.brand === selectedBrand);
+    }
+    setFilteredPhones(filtered);
+  }, [phones, selectedBrand]);
 
   const handleDelete = (phoneId) => {
     axios
@@ -26,10 +40,30 @@ export default function Page2() {
       });
   };
 
+  const handleBrandFilter = (event) => {
+    setSelectedBrand(event.target.value);
+  };
+
   return (
     <div className="data_page">
       <div className="data-container">
         <span>Base de données</span>
+        <div className="filter-container">
+          <label htmlFor="brandFilter">Filtrer par : </label>
+          <select
+            id="brandFilter"
+            value={selectedBrand}
+            onChange={handleBrandFilter}
+          >
+            <option value="">Toutes les marques</option>
+            <option value="Apple">Apple</option>
+            <option value="Samsung">Samsung</option>
+            <option value="Google">Google</option>
+            <option value="Sony">Sony</option>
+            <option value="Xiaomi">Xiaomi</option>
+            <option value="Huawei">Huawei</option>
+          </select>
+        </div>
         <table>
           <tr className="title-tr">
             <th scope="col">Marque</th>
@@ -41,8 +75,8 @@ export default function Page2() {
             <th scope="col">Chargeur</th>
             <th scope="col">Prix (€)</th>
           </tr>
-          {phones.length &&
-            phones.map((phone) => (
+          {filteredPhones.length &&
+            filteredPhones.map((phone) => (
               <tr key={phone.id} className="desc-tr">
                 <th scope="row">{phone.brand}</th>
                 <td>{phone.model}</td>
