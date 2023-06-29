@@ -51,6 +51,13 @@ code {
   }
 }
 
+@font-face {
+  font-family: "PMaker";
+  src: local("PMaker"),
+    url("./fonts/PermanentMarker-Regular.ttf") format("truetype");
+  font-weight: bold;
+}
+
 button {
   font-size: calc(10px + 2vmin);
 }
