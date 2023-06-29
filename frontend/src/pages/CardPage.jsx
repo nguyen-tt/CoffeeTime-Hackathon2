@@ -3,6 +3,7 @@ import { useState } from "react";
 import CardList from "../components/CardList";
 import Filter from "../components/Filter";
 import datas from "../datas/datas";
+import "../sass/_cardpage.scss";
 
 function CardPage() {
   const ram = ["4", "8", "16"];
@@ -394,6 +395,7 @@ function CardPage() {
     handleFilter(updatedCheckedCategories);
   };
 
+  handleFilter();
   return (
     <div className="card-container">
       <Filter

@@ -5,7 +5,7 @@ import Card from "./Card";
 function CardList(props) {
   const { updateDatas } = props;
   return (
-    <div>
+    <div className="cardlist">
       {updateDatas.map((data) => (
         <Card key={data.id} {...data} />
       ))}

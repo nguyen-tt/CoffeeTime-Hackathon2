@@ -3,6 +3,7 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable react/prop-types */
 import Checkbox from "./Checkbox";
+import "../sass/_cardpage.scss";
 
 function Filter(props) {
   const {
