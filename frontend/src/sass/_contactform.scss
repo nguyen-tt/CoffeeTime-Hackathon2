@@ -11,13 +11,12 @@
 
 .form input {
   margin: 10px;
-  border-radius: 30px;
+  border-radius: 5px;
   border-width: 0.2rem;
   border-color: #00acb0;
   width: 200px;
   height: 35px;
   padding-left: 26px;
-  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: bolder;
   color: grey;
@@ -26,9 +25,8 @@
 
 textarea {
   margin-top: 2rem;
-  font-family: "Montserrat", sans-serif;
-  border-radius: 2rem;
-  border-width: 0.5rem;
+  border-radius: 6px;
+  border-width: 0.2rem;
   border-color: #00acb0;
   font-size: 16px;
   font-weight: bolder;
@@ -45,7 +43,6 @@ textarea {
   transition: all 0.5s ease;
   color: white;
   border: 3px solid #00acb0;
-  font-family: "Montserrat", sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   text-align: center;

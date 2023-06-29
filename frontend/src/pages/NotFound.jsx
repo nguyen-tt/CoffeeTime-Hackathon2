@@ -10,7 +10,6 @@ export default function NotFound() {
       <div className="notfound-text">
         <span>404</span>
         <span>Take a coffee and relax</span>
-        <button type="button">BACK TO HOME</button>
       </div>
     </div>
   );
