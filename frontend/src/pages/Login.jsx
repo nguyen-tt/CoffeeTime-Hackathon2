@@ -52,6 +52,7 @@ export default function Login() {
             id: user.id,
             username,
             isAdmin: user.role === 1,
+            isUser: user.role === 0,
           });
         })
         .catch((err) => {
@@ -62,7 +63,7 @@ export default function Login() {
 
   return (
     <>
-      {Object.keys(currentUser).length && <Navigate to="/adding" />}
+      {Object.keys(currentUser).length && <Navigate to="/" />}
       <div className="account">
         <form className="account-login" onSubmit={handleLogin} noValidate>
           <h1>Connexion</h1>

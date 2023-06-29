@@ -1,14 +1,23 @@
 import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+
+import CurrentUserContext from "../contexts/CurrentUser";
 
 export default function Home() {
+  const { currentUser } = useContext(CurrentUserContext);
+
   return (
     <div className="home">
       <div className="hero">
-        <Link to="/login" className="linkhome-button">
-          <button type="button" className="connect">
-            Se connecter
-          </button>
-        </Link>
+        {currentUser.isUser || currentUser.isAdmin ? (
+          ""
+        ) : (
+          <Link to="/login" className="linkhome-button">
+            <button type="button" className="connect">
+              Se connecter
+            </button>
+          </Link>
+        )}
       </div>
       <div className="home-text">
         <h1>Luttons contre la fracture numérique !</h1>

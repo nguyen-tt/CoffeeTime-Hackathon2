@@ -1,8 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
+
+import CurrentUserContext from "../contexts/CurrentUser";
 
 export default function Page2() {
   const [phones, setPhones] = useState([]);
+  const { currentUser } = useContext(CurrentUserContext);
 
   useEffect(() => {
     axios
@@ -36,6 +39,7 @@ export default function Page2() {
             <th scope="col">Écran</th>
             <th scope="col">Réseau</th>
             <th scope="col">Chargeur</th>
+            <th scope="col">Prix</th>
           </tr>
           {phones.length &&
             phones.map((phone) => (
@@ -47,11 +51,17 @@ export default function Page2() {
                 <td>{phone.screen} "</td>
                 <td>{phone.network}</td>
                 <td>{phone.loader === 1 ? "Oui" : "Non"}</td>
-                <td>
-                  <button type="button" onClick={() => handleDelete(phone.id)}>
-                    Supprimer
-                  </button>
-                </td>
+                <td>50€</td>
+                {currentUser.isAdmin && (
+                  <td>
+                    <button
+                      type="button"
+                      onClick={() => handleDelete(phone.id)}
+                    >
+                      Supprimer
+                    </button>
+                  </td>
+                )}
               </tr>
             ))}
         </table>
