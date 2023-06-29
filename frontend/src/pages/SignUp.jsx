@@ -1,22 +1,13 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
 
 export default function SignUp() {
-  const [firstname, setFirstname] = useState("");
-  const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [invalidFields, setInvalidFields] = useState([]);
   const [invalidSignUp, setInvalidSignUp] = useState("");
   const [isRegistered, setIsRegistered] = useState(false);
-  const handleFirstName = (e) => {
-    setFirstname(e.target.value);
-  };
-  const handleLastName = (e) => {
-    setLastname(e.target.value);
-  };
   const handleEmail = (e) => {
     setEmail(e.target.value);
   };
@@ -37,8 +28,6 @@ export default function SignUp() {
       email,
       password,
       confirmPassword,
-      firstname,
-      lastname,
     };
     const errors = new Set();
 
@@ -76,45 +65,17 @@ export default function SignUp() {
     <>
       {isRegistered ? (
         <section className="account signup">
-          <h2>Créer un compte</h2>
-          <p>Votre compte utilisateur a été créé avec succès.</p>
-          <p className="login">
-            <Link to="/login">Se connecter</Link>
-          </p>
+          <p>Le nouvel utilisateur a été créé avec succès.</p>
         </section>
       ) : (
         <form className="account signup" onSubmit={handleSignUp} noValidate>
           <h2>Créer un compte</h2>
-          <p>
-            Les champs accompagnés d’un * sont obligatoires
+          <p className="obligation">
+            Tous les champs sont obligatoires
             {invalidSignUp && <span className="error">{invalidSignUp}</span>}
           </p>
           <p>
-            <label htmlFor="signup-firstname">Prénom</label>
-            <input
-              id="signup-firstname"
-              name="firstname"
-              type="text"
-              maxLength="255"
-              value={firstname}
-              onChange={handleFirstName}
-            />
-          </p>
-          <p>
-            <label htmlFor="signup-lastname">Nom</label>
-            <input
-              id="signup-lastname"
-              name="lastname"
-              type="text"
-              maxLength="255"
-              value={lastname}
-              onChange={handleLastName}
-            />
-          </p>
-          <p>
             <label htmlFor="signup-email">
-              Adresse email
-              <span aria-label=" obligatoire"> *</span>
               {invalidFields.includes("email") && (
                 <span className="error">
                   (une adresse email doit être saisie)
@@ -128,12 +89,11 @@ export default function SignUp() {
               value={email}
               required
               onChange={handleEmail}
+              placeholder="Email *"
             />
           </p>
           <p>
             <label htmlFor="signup-password">
-              Votre mot de passe
-              <span aria-label=" obligatoire"> *</span>
               {invalidFields.includes("password") && (
                 <span className="error">(un mot de passe doit être saisi)</span>
               )}
@@ -146,12 +106,11 @@ export default function SignUp() {
               autoComplete="new-password"
               required
               onChange={handlePassword}
+              placeholder="Votre mot de passe *"
             />
           </p>
           <p>
             <label htmlFor="signup-password-confirm">
-              Confirmez votre mot de passe
-              <span aria-label=" obligatoire"> *</span>
               {invalidFields.includes("confirmPassword") && (
                 <span className="error">
                   (le mot de passe doit être resaisi à l’identique)
@@ -165,9 +124,10 @@ export default function SignUp() {
               value={confirmPassword}
               required
               onChange={handleConfirmPassword}
+              placeholder="Confirmez votre mot de passe *"
             />
           </p>
-          <p>
+          <p className="validate-signup">
             <input type="submit" value="S’inscrire" />
           </p>
         </form>

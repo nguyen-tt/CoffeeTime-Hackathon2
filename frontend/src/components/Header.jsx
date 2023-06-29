@@ -22,14 +22,24 @@ export default function Header() {
         <nav className="navbar">
           <ul>
             {currentUser.isAdmin && (
-              <NavLink
-                to="/adding"
-                className={
-                  location === "/adding" ? "navlink active" : "navlink"
-                }
-              >
-                <li>Ajout</li>
-              </NavLink>
+              <>
+                <NavLink
+                  to="/signup"
+                  className={
+                    location === "/signup" ? "navlink active" : "navlink"
+                  }
+                >
+                  <li>Nouveau compte</li>
+                </NavLink>
+                <NavLink
+                  to="/adding"
+                  className={
+                    location === "/adding" ? "navlink active" : "navlink"
+                  }
+                >
+                  <li>Ajout Smartphone</li>
+                </NavLink>
+              </>
             )}
 
             {(currentUser.isUser || currentUser.isAdmin) && (
