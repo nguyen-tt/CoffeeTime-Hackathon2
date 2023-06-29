@@ -7,6 +7,8 @@ export default function Data() {
   const [phones, setPhones] = useState([]);
   const [filteredPhones, setFilteredPhones] = useState([]);
   const [selectedBrand, setSelectedBrand] = useState("");
+  const [selectedRam, setSelectedRam] = useState("");
+  const [selectedStorage, setSelectedStorage] = useState("");
   const { currentUser } = useContext(CurrentUserContext);
 
   useEffect(() => {
@@ -27,8 +29,14 @@ export default function Data() {
     if (selectedBrand !== "") {
       filtered = filtered.filter((phone) => phone.brand === selectedBrand);
     }
+    if (selectedRam !== "") {
+      filtered = filtered.filter((phone) => phone.ram === selectedRam);
+    }
+    if (selectedStorage !== "") {
+      filtered = filtered.filter((phone) => phone.storage === selectedStorage);
+    }
     setFilteredPhones(filtered);
-  }, [phones, selectedBrand]);
+  }, [phones, selectedBrand, selectedRam, selectedStorage]);
 
   const handleDelete = (phoneId) => {
     axios
@@ -42,6 +50,12 @@ export default function Data() {
 
   const handleBrandFilter = (event) => {
     setSelectedBrand(event.target.value);
+  };
+  const handleRamFilter = (event) => {
+    setSelectedRam(event.target.value);
+  };
+  const handleStorageFilter = (event) => {
+    setSelectedStorage(event.target.value);
   };
 
   return (
@@ -62,6 +76,28 @@ export default function Data() {
             <option value="Sony">Sony</option>
             <option value="Xiaomi">Xiaomi</option>
             <option value="Huawei">Huawei</option>
+          </select>
+          <select id="ramFilter" value={selectedRam} onChange={handleRamFilter}>
+            <option value="">Toutes les RAM</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="6">6</option>
+            <option value="8">8</option>
+            <option value="12">12</option>
+          </select>
+          <select
+            id="storageFilter"
+            value={selectedStorage}
+            onChange={handleStorageFilter}
+          >
+            <option value="">Capacités de stockage</option>
+            <option value="16">16</option>
+            <option value="32">32</option>
+            <option value="64">64</option>
+            <option value="128">128</option>
+            <option value="256">256</option>
           </select>
         </div>
         <table>
