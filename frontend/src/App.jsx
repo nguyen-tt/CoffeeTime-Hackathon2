@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import Page2 from "./pages/Page2";
+import Data from "./pages/Data";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import NotFound from "./pages/NotFound";
@@ -23,7 +23,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/adding" element={<Adding />} />
-            <Route path="/data" element={<Page2 />} />
+            <Route path="/data" element={<Data />} />
             <Route path="/faq" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
             <Route path="/login" element={<Login />} />
