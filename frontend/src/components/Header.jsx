@@ -34,6 +34,14 @@ export default function Header() {
               <li>Base de données</li>
             </NavLink>
             <NavLink
+              to="/cardpage"
+              className={
+                location === "/cardpage" ? "navlink active" : "navlink"
+              }
+            >
+              <li>Téléphones</li>
+            </NavLink>
+            <NavLink
               to="/faq"
               className={location === "/faq" ? "navlink active" : "navlink"}
             >
