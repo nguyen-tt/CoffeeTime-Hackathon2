@@ -21,12 +21,16 @@ export default function Header() {
         </NavLink>
         <nav className="navbar">
           <ul>
-            <NavLink
-              to="/adding"
-              className={location === "/adding" ? "navlink active" : "navlink"}
-            >
-              <li>Ajout</li>
-            </NavLink>
+            {currentUser.isAdmin && (
+              <NavLink
+                to="/adding"
+                className={
+                  location === "/adding" ? "navlink active" : "navlink"
+                }
+              >
+                <li>Ajout</li>
+              </NavLink>
+            )}
             <NavLink
               to="/data"
               className={location === "/data" ? "navlink active" : "navlink"}
@@ -39,23 +43,25 @@ export default function Header() {
             >
               <li>FAQ</li>
             </NavLink>
-            <nav className="disconnect">
-              {hasCurrentUser && (
-                <button
-                  type="submit"
-                  onClick={logout}
-                  className="disconnect-btn"
-                >
-                  <h1>Déconnexion</h1>
-                </button>
+            <div className="disco-container">
+              <nav className="disconnect">
+                {hasCurrentUser && (
+                  <button
+                    type="submit"
+                    onClick={logout}
+                    className="disconnect-btn"
+                  >
+                    <h1>Déconnexion</h1>
+                  </button>
+                )}
+              </nav>
+              {hasCurrentUser && currentUser.username && (
+                <p className="hello">Bonjour, {currentUser.username}</p>
               )}
-            </nav>
+            </div>
           </ul>
         </nav>
       </div>
-      {hasCurrentUser && currentUser.username && (
-        <p className="hello">Bonjour, {currentUser.username}</p>
-      )}
     </header>
   );
 }
