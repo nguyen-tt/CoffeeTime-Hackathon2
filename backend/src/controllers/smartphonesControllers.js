@@ -28,49 +28,35 @@ const read = (req, res) => {
     });
 };
 
-// const edit = (req, res) => {
-//   const item = req.body;
+const add = (req, res) => {
+  const {
+    brand,
+    model,
+    ram,
+    storage,
+    screen,
+    network,
+    loader,
+    operatingSystem,
+    operatingSystemVersion,
+    images,
+  } = req.body;
 
-//   item.id = parseInt(req.params.id, 10);
-
-//   models.item
-//     .update(item)
-//     .then(([result]) => {
-//       if (result.affectedRows === 0) {
-//         res.sendStatus(404);
-//       } else {
-//         res.sendStatus(204);
-//       }
-//     })
-//     .catch((err) => {
-//       console.error(err);
-//       res.sendStatus(500);
-//     });
-// };
-
-// const add = (req, res) => {
-//   const {item} = req.body;
-
-//   models.item
-//     .insert(item)
-//     .then(([result]) => {
-//       res.location(`/items/${result.insertId}`).sendStatus(201);
-//     })
-//     .catch((err) => {
-//       console.error(err);
-//       res.sendStatus(500);
-//     });
-// };
-
-const destroy = (req, res) => {
   models.smartphones
-    .delete(req.params.id)
-    .then(([result]) => {
-      if (result.affectedRows === 0) {
-        res.sendStatus(404);
-      } else {
-        res.sendStatus(204);
-      }
+    .insert(
+      brand,
+      model,
+      ram,
+      storage,
+      screen,
+      network,
+      loader,
+      operatingSystem,
+      operatingSystemVersion,
+      images
+    )
+    .then(([rows]) => {
+      res.status(201).json({ id: rows.insertId });
     })
     .catch((err) => {
       console.error(err);
@@ -81,7 +67,5 @@ const destroy = (req, res) => {
 module.exports = {
   browse,
   read,
-  //   edit,
-  //   add,
-  destroy,
+  add,
 };
