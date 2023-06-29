@@ -39,7 +39,7 @@ export default function Page2() {
             <th scope="col">Écran</th>
             <th scope="col">Réseau</th>
             <th scope="col">Chargeur</th>
-            <th scope="col">Prix</th>
+            <th scope="col">Prix (€)</th>
           </tr>
           {phones.length &&
             phones.map((phone) => (
@@ -51,7 +51,9 @@ export default function Page2() {
                 <td>{phone.screen} "</td>
                 <td>{phone.network}</td>
                 <td>{phone.loader === 1 ? "Oui" : "Non"}</td>
-                <td>50€</td>
+                <td>
+                  {0.2 * phone.storage + 2 * phone.ram + 2 * phone.screen}
+                </td>
                 {currentUser.isAdmin && (
                   <td>
                     <button
