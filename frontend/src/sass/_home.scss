@@ -1,4 +1,21 @@
 .home-text {
+  position: relative;
+}
+.text-on-image {
+  position: absolute;
+  right: 10%;
+  left: 20%;
+  bottom: 90%;
+}
+
+h3 {
+  color: white;
+  font-family: "PermanentMarker-Regular.ttf";
+  font-size: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+  .home-text {
     position: relative;
   }
   .text-on-image {
@@ -7,45 +24,28 @@
     left: 20%;
     bottom: 90%;
   }
-  
+
   h3 {
     color: white;
     font-family: "PermanentMarker-Regular.ttf";
-    font-size: 1rem;
+    font-size: 2rem;
   }
-
-@media screen and (min-width: 600px){
-    .home-text {
-        position: relative;
-      }
-      .text-on-image {
-        position: absolute;
-        right: 10%;
-        left: 20%;
-        bottom: 90%;
-      }
-      
-      h3 {
-        color: white;
-        font-family: "PermanentMarker-Regular.ttf";
-        font-size: 2rem;
-      }
 }
 
-@media screen and (min-width: 1200px){
-    .home-text {
-        position: relative;
-      }
-      .text-on-image {
-        position: absolute;
-        right: 10%;
-        left: 20%;
-        bottom: 90%;
-      }
-      
-      h3 {
-        color: white;
-        font-family: "PermanentMarker-Regular.ttf";
-        font-size: 6rem;
-      }
+@media screen and (min-width: 1200px) {
+  .home-text {
+    position: relative;
+  }
+  .text-on-image {
+    position: absolute;
+    right: 10%;
+    left: 20%;
+    bottom: 90%;
+  }
+
+  h3 {
+    color: white;
+    font-family: "PermanentMarker-Regular.ttf";
+    font-size: 6rem;
+  }
 }

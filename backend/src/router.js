@@ -24,6 +24,7 @@ router.delete("/users/:id", usersControllers.destroy);
 router.get("/smartphones", smartphonesControllers.browse);
 router.get("/smartphones/:id", smartphonesControllers.read);
 router.post("/smartphones", smartphonesControllers.add);
+router.delete("/smartphones/:id", smartphonesControllers.destroy);
 
 router.post(
   "/login",
