@@ -29,7 +29,7 @@ export default function Header() {
                     location === "/signup" ? "navlink active" : "navlink"
                   }
                 >
-                  <li>Nouveau compte</li>
+                  <li>Créer un compte</li>
                 </NavLink>
                 <NavLink
                   to="/adding"
@@ -37,7 +37,7 @@ export default function Header() {
                     location === "/adding" ? "navlink active" : "navlink"
                   }
                 >
-                  <li>Ajout Smartphone</li>
+                  <li>Créer un Smartphone</li>
                 </NavLink>
               </>
             )}
@@ -61,10 +61,12 @@ export default function Header() {
                   <li>Téléphones</li>
                 </NavLink>
                 <NavLink
-                  to="/faq"
-                  className={location === "/faq" ? "navlink active" : "navlink"}
+                  to="/contact"
+                  className={
+                    location === "/contact" ? "navlink active" : "navlink"
+                  }
                 >
-                  <li>FAQ</li>
+                  <li>Contact</li>
                 </NavLink>
               </>
             )}

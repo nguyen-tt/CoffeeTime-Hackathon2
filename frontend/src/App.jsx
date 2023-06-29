@@ -27,7 +27,7 @@ function App() {
             <Route path="/adding" element={<Adding />} />
             <Route path="/data" element={<Data />} />
             <Route path="/cardpage" element={<CardPage />} />
-            <Route path="/faq" element={<Contact />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />

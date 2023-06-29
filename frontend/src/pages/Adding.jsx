@@ -54,11 +54,12 @@ export default function Adding() {
                     Choisir
                   </option>
                   <option value="">--</option>
-                  <option value="apple">Apple</option>
-                  <option value="sony">Sony</option>
-                  <option value="xiaomi">Xiaomi</option>
-                  <option value="huawei">Huawei</option>
-                  <option value="samsung">Samsung</option>
+                  <option value="Apple">Apple</option>
+                  <option value="Sony">Sony</option>
+                  <option value="Xiaomi">Xiaomi</option>
+                  <option value="Huawei">Huawei</option>
+                  <option value="Samsung">Samsung</option>
+                  <option value="Google">Google</option>
                 </select>
               </label>
               <label className="phone-label">
