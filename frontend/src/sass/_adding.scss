@@ -79,7 +79,7 @@
   background-color: white;
 }
 
-@media screen and (min-width: 600px){
+@media screen and (min-width: 600px) {
   .container {
     display: grid;
     justify-content: center;
@@ -92,7 +92,7 @@
     margin: auto;
     box-sizing: border-box;
   }
-  
+
   .add-phone {
     display: flex;
     justify-content: center;
@@ -101,16 +101,16 @@
     margin-top: 3rem;
     font-size: 2rem;
   }
-  
+
   .phone-form {
     margin-top: 3rem;
     margin-bottom: 3rem;
   }
-  
+
   .maker-div {
     margin-top: 10rem;
   }
-  
+
   .maker-select {
     margin-left: 2rem;
     border-radius: 6px;
@@ -120,20 +120,20 @@
     background-color: white;
     color: #00acb0;
   }
-  
+
   .phone-label {
     font-family: "Montserrat", sans-serif;
     font-size: 2rem;
     margin-left: 5rem;
   }
-  
+
   .add-btn-div {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 2rem;
   }
-  
+
   .add-btn {
     display: flex;
     justify-content: center;
@@ -154,15 +154,14 @@
     outline: none;
     border-radius: 5px;
   }
-  
+
   .add-btn:hover {
     color: grey;
     background-color: white;
   }
 }
 
-
-@media screen and (min-width: 1200px){
+@media screen and (min-width: 1200px) {
   .container {
     display: grid;
     justify-content: center;
@@ -175,7 +174,7 @@
     margin: auto;
     box-sizing: border-box;
   }
-  
+
   .add-phone {
     display: flex;
     justify-content: center;
@@ -184,16 +183,16 @@
     margin-top: 3rem;
     font-size: 3rem;
   }
-  
+
   .phone-form {
     margin-top: 3rem;
     margin-bottom: 3rem;
   }
-  
+
   .maker-div {
     margin-top: 10rem;
   }
-  
+
   .maker-select {
     margin-left: 2rem;
     border-radius: 6px;
@@ -203,19 +202,19 @@
     background-color: white;
     color: #00acb0;
   }
-  
+
   .phone-label {
     font-family: "Montserrat", sans-serif;
     font-size: 2rem;
     margin-left: 5rem;
   }
-  
+
   .add-btn-div {
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  
+
   .add-btn {
     display: flex;
     justify-content: center;
@@ -236,7 +235,7 @@
     outline: none;
     border-radius: 5px;
   }
-  
+
   .add-btn:hover {
     color: grey;
     background-color: white;
