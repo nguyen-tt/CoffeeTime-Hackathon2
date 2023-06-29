@@ -31,18 +31,25 @@ export default function Header() {
                 <li>Ajout</li>
               </NavLink>
             )}
-            <NavLink
-              to="/data"
-              className={location === "/data" ? "navlink active" : "navlink"}
-            >
-              <li>Base de données</li>
-            </NavLink>
-            <NavLink
-              to="/faq"
-              className={location === "/faq" ? "navlink active" : "navlink"}
-            >
-              <li>FAQ</li>
-            </NavLink>
+
+            {(currentUser.isUser || currentUser.isAdmin) && (
+              <>
+                <NavLink
+                  to="/data"
+                  className={
+                    location === "/data" ? "navlink active" : "navlink"
+                  }
+                >
+                  <li>Base de données</li>
+                </NavLink>
+                <NavLink
+                  to="/faq"
+                  className={location === "/faq" ? "navlink active" : "navlink"}
+                >
+                  <li>FAQ</li>
+                </NavLink>
+              </>
+            )}
             <div className="disco-container">
               <nav className="disconnect">
                 {hasCurrentUser && (
