@@ -3,6 +3,8 @@
   align-items: center;
   justify-content: center;
   min-height: 80vh;
+  font-family: var(--font);
+  background: url("@assets/bg404.jpg") no-repeat 80%;
 }
 .cup {
   position: relative;
@@ -12,7 +14,7 @@
   border: 8px solid #ffefdb;
   box-shadow: 0 0 0 12px #352a22;
   border-radius: 10px 10px 60px 75px;
-  background: url("@assets/coffee.png");
+  background: white url("@assets/coffee.png");
   background-repeat: repeat-x;
   background-position: 0 130px;
   animation: filling 8s infinite;
@@ -83,14 +85,8 @@
   animation-delay: 1s;
 }
 
-.notfound-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-left: 20rem;
-  span {
-    font-size: 5rem;
-  }
-  button {
-  }
+.logo404 {
+  position: relative;
+  left: 20rem;
+  width: 50rem;
 }
