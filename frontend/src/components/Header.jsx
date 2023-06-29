@@ -21,41 +21,72 @@ export default function Header() {
         </NavLink>
         <nav className="navbar">
           <ul>
-            <NavLink
-              to="/adding"
-              className={location === "/adding" ? "navlink active" : "navlink"}
-            >
-              <li>Ajout</li>
-            </NavLink>
-            <NavLink
-              to="/data"
-              className={location === "/data" ? "navlink active" : "navlink"}
-            >
-              <li>Base de données</li>
-            </NavLink>
-            <NavLink
-              to="/faq"
-              className={location === "/faq" ? "navlink active" : "navlink"}
-            >
-              <li>FAQ</li>
-            </NavLink>
-            <nav className="disconnect">
-              {hasCurrentUser && (
-                <button
-                  type="submit"
-                  onClick={logout}
-                  className="disconnect-btn"
+            {currentUser.isAdmin && (
+              <>
+                <NavLink
+                  to="/signup"
+                  className={
+                    location === "/signup" ? "navlink active" : "navlink"
+                  }
                 >
-                  <h1>Déconnexion</h1>
-                </button>
+                  <li>Nouveau compte</li>
+                </NavLink>
+                <NavLink
+                  to="/adding"
+                  className={
+                    location === "/adding" ? "navlink active" : "navlink"
+                  }
+                >
+                  <li>Ajout Smartphone</li>
+                </NavLink>
+              </>
+            )}
+
+            {(currentUser.isUser || currentUser.isAdmin) && (
+              <>
+                <NavLink
+                  to="/data"
+                  className={
+                    location === "/data" ? "navlink active" : "navlink"
+                  }
+                >
+                  <li>Base de données</li>
+                </NavLink>
+                <NavLink
+                  to="/cardpage"
+                  className={
+                    location === "/cardpage" ? "navlink active" : "navlink"
+                  }
+                >
+                  <li>Téléphones</li>
+                </NavLink>
+                <NavLink
+                  to="/faq"
+                  className={location === "/faq" ? "navlink active" : "navlink"}
+                >
+                  <li>FAQ</li>
+                </NavLink>
+              </>
+            )}
+            <div className="disco-container">
+              <nav className="disconnect">
+                {hasCurrentUser && (
+                  <button
+                    type="submit"
+                    onClick={logout}
+                    className="disconnect-btn"
+                  >
+                    <h1>Déconnexion</h1>
+                  </button>
+                )}
+              </nav>
+              {hasCurrentUser && currentUser.username && (
+                <p className="hello">Bonjour, {currentUser.username}</p>
               )}
-            </nav>
+            </div>
           </ul>
         </nav>
       </div>
-      {hasCurrentUser && currentUser.username && (
-        <p className="hello">Bonjour, {currentUser.username}</p>
-      )}
     </header>
   );
 }

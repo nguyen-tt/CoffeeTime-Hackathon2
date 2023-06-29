@@ -32,6 +32,7 @@ const models = {};
 const ItemManager = require("./ItemManager");
 const UsersManager = require("./UsersManager");
 const LoginManager = require("./LoginManager");
+const SmartphonesManager = require("./SmarphonesManager");
 
 models.item = new ItemManager();
 models.item.setDatabase(pool);
@@ -41,6 +42,9 @@ models.users.setDatabase(pool);
 
 models.login = new LoginManager();
 models.login.setDatabase(pool);
+
+models.smartphones = new SmartphonesManager();
+models.smartphones.setDatabase(pool);
 
 // bonus: use a proxy to personalize error message,
 // when asking for a non existing model
