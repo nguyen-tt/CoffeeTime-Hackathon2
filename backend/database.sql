@@ -41,7 +41,7 @@ CREATE TABLE smartphones (
     loader TINYINT(1) NOT NULL DEFAULT 1,
     operating_system VARCHAR(255) NOT NULL,
     operating_system_version VARCHAR(255) NOT NULL,
-    images VARCHAR(255) NOT NULL,
+    images VARCHAR(255),
     screen_size_id INT UNSIGNED, FOREIGN KEY (screen_size_id) REFERENCES screen_sizes(id),
     ram_memory_id INT UNSIGNED, FOREIGN KEY (ram_memory_id) REFERENCES ram_memories(id),
     storage_value_id INT UNSIGNED, FOREIGN KEY (storage_value_id) REFERENCES storage_values(id),

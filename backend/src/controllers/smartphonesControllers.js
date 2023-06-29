@@ -28,6 +28,20 @@ const read = (req, res) => {
     });
 };
 
+const add = (req, res) => {
+  const { smartphones } = req.body;
+
+  models.item
+    .insert(smartphones)
+    .then(([result]) => {
+      res.location(`/items/${result.insertId}`).sendStatus(201);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
 // const edit = (req, res) => {
 //   const item = req.body;
 
@@ -41,20 +55,6 @@ const read = (req, res) => {
 //       } else {
 //         res.sendStatus(204);
 //       }
-//     })
-//     .catch((err) => {
-//       console.error(err);
-//       res.sendStatus(500);
-//     });
-// };
-
-// const add = (req, res) => {
-//   const {item} = req.body;
-
-//   models.item
-//     .insert(item)
-//     .then(([result]) => {
-//       res.location(`/items/${result.insertId}`).sendStatus(201);
 //     })
 //     .catch((err) => {
 //       console.error(err);
@@ -81,7 +81,7 @@ const destroy = (req, res) => {
 module.exports = {
   browse,
   read,
+  add,
   //   edit,
-  //   add,
   destroy,
 };

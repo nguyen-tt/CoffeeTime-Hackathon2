@@ -1,15 +1,36 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 export default function Adding() {
-  const [value, setValue] = useState("default");
+  // const [value, setValue] = useState("default");
+  const [phoneData, setPhoneData] = useState({
+    brand: "",
+    model: "",
+  });
 
   const handleChange = (e) => {
-    setValue(e.target.value);
+    // setValue(e.target.value);
+    const { name, value } = e.target;
+    setPhoneData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
   };
+
+  axios
+    .post(`${import.meta.env.VITE_BACKEND_URL}/smartphones`, phoneData)
+    .then((response) => {
+      console.warn("phone added", response.data);
+      setPhoneData({
+        brand: "",
+        model: "",
+      });
+    })
+    .catch((err) => console.error(err));
 
   return (
     <>
@@ -23,7 +44,9 @@ export default function Adding() {
               Marque
               <br />
               <select
-                defaultValue={value}
+                name="brand"
+                value={phoneData.brand}
+                // defaultValue={value}
                 onChange={handleChange}
                 className="maker-select"
               >
@@ -45,7 +68,9 @@ export default function Adding() {
               Modèle
               <br />
               <select
-                defaultValue={value}
+                name="model"
+                value={phoneData.model}
+                // defaultValue={value}
                 onChange={handleChange}
                 className="maker-select"
               >
@@ -67,7 +92,7 @@ export default function Adding() {
               RAM
               <br />
               <select
-                defaultValue={value}
+                // defaultValue={value}
                 onChange={handleChange}
                 className="maker-select"
               >
@@ -91,7 +116,7 @@ export default function Adding() {
               Stockage
               <br />
               <select
-                defaultValue={value}
+                // defaultValue={value}
                 onChange={handleChange}
                 className="maker-select"
               >
@@ -111,7 +136,7 @@ export default function Adding() {
               Écran
               <br />
               <select
-                defaultValue={value}
+                // defaultValue={value}
                 onChange={handleChange}
                 className="maker-select"
               >
@@ -132,7 +157,7 @@ export default function Adding() {
               Réseau
               <br />
               <select
-                defaultValue={value}
+                // defaultValue={value}
                 onChange={handleChange}
                 className="maker-select"
               >
@@ -151,7 +176,7 @@ export default function Adding() {
               Chargeur
               <br />
               <select
-                defaultValue={value}
+                // defaultValue={value}
                 onChange={handleChange}
                 className="maker-select"
               >
@@ -170,7 +195,7 @@ export default function Adding() {
               État
               <br />
               <select
-                defaultValue={value}
+                // defaultValue={value}
                 onChange={handleChange}
                 className="maker-select"
               >
