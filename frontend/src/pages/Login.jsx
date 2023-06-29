@@ -52,6 +52,7 @@ export default function Login() {
             id: user.id,
             username,
             isAdmin: user.role === 1,
+            isUser: user.role === 0,
           });
         })
         .catch((err) => {
