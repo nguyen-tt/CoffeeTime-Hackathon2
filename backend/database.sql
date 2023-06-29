@@ -50,12 +50,12 @@ CREATE TABLE smartphones (
 INSERT INTO smartphones (brand, model, ram, storage, screen, network, operatingSystem, operatingSystemVersion)
 VALUES ('Apple', 'Iphone 12 Pro','6','256','6', '5G', 'IOS', '16'),
        ('Samsung', 'Galaxy S22 Ultra','12','256','6', '5G', 'Android', '13'),
-       ('Google', 'Pixel 6 Pro','12','256','6', '5G', 'Android', '13');
-       ('Apple', 'IPhone 8', '8', '2', '64', '4G', 'IOS', '10')
-       ('Samsung', 'Galaxy S10 Plus', '4', '32', '128', '4G', 'Android', '11')
-       ('Xiaomi', 'Xiaomi 13', '6', '32', '128', '4G', 'Android', '12')
-       ('Google', 'Pixel 5 Pro','12','128','6', '5G', 'Android', '14');
-       ('Xiaomi', 'Xiaomi 11', '8', '64', '128', '4G', 'Android', '13')
+       ('Google', 'Pixel 6 Pro','12','256','6', '5G', 'Android', '13'),
+       ('Apple', 'IPhone 8', '8', '2', '64', '4G', 'IOS', '10'),
+       ('Samsung', 'Galaxy S10 Plus', '4', '32', '128', '4G', 'Android', '11'),
+       ('Xiaomi', 'Xiaomi 13', '6', '32', '128', '4G', 'Android', '12'),
+       ('Google', 'Pixel 5 Pro','12','128','6', '5G', 'Android', '14'),
+       ('Xiaomi', 'Xiaomi 11', '8', '64', '128', '4G', 'Android', '13');
 
 CREATE TABLE users (
   id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
