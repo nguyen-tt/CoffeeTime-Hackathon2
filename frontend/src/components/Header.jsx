@@ -1,9 +1,16 @@
 import { NavLink, useLocation } from "react-router-dom";
+import { useContext } from "react";
+import CurrentUserContext from "../contexts/CurrentUser";
 
-import logo from "@assets/logo.svg";
+import logo from "../assets/logo.svg";
 
 export default function Header() {
   const location = useLocation();
+  const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
+  const hasCurrentUser = !!Object.keys(currentUser).length;
+  const logout = () => {
+    setCurrentUser({});
+  };
 
   return (
     <header className="header">
@@ -15,8 +22,8 @@ export default function Header() {
         <nav className="navbar">
           <ul>
             <NavLink
-              to="/add"
-              className={location === "/add" ? "navlink active" : "navlink"}
+              to="/adding"
+              className={location === "/adding" ? "navlink active" : "navlink"}
             >
               <li>Ajout</li>
             </NavLink>
@@ -32,9 +39,23 @@ export default function Header() {
             >
               <li>FAQ</li>
             </NavLink>
+            <nav className="disconnect">
+              {hasCurrentUser && (
+                <button
+                  type="submit"
+                  onClick={logout}
+                  className="disconnect-btn"
+                >
+                  <h1>Déconnexion</h1>
+                </button>
+              )}
+            </nav>
           </ul>
         </nav>
       </div>
+      {hasCurrentUser && currentUser.username && (
+        <p className="hello">Bonjour, {currentUser.username}</p>
+      )}
     </header>
   );
 }

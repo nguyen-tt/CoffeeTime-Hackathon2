@@ -1,15 +1,14 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import Page1 from "./pages/Page1";
 import Page2 from "./pages/Page2";
 import Contact from "./pages/Contact";
+import Footer from "./components/Footer";
+import NotFound from "./pages/NotFound";
+import Adding from "./pages/Adding";
+import Header from "./components/Header";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
-import NotFound from "./pages/NotFound";
-
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 
 import { CurrentUserProvider } from "./contexts/CurrentUser";
 
@@ -23,7 +22,7 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/add" element={<Page1 />} />
+            <Route path="/adding" element={<Adding />} />
             <Route path="/data" element={<Page2 />} />
             <Route path="/faq" element={<Contact />} />
             <Route path="*" element={<NotFound />} />

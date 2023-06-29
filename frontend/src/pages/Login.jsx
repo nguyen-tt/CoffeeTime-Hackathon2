@@ -62,7 +62,7 @@ export default function Login() {
 
   return (
     <>
-      {Object.keys(currentUser).length && <Navigate to="/account" />}
+      {Object.keys(currentUser).length && <Navigate to="/adding" />}
       <div className="account">
         <form className="account-login" onSubmit={handleLogin} noValidate>
           <h1>Connexion</h1>

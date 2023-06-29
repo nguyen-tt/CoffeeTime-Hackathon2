@@ -65,3 +65,98 @@ CREATE TABLE users (
   created DATETIME NOT NULL DEFAULT NOW()
 ) ENGINE = InnoDB CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
+INSERT INTO
+    users (
+        email,
+        password,
+        firstname,
+        lastname,
+        role
+    )
+VALUES (
+        'benoit.vandanjon@wildcodeschool.com',
+        '$argon2id$v=19$m=16384,t=2,p=1$k3aFXCpcjyZ2cHpcZPDw3w$gSJbTCadxNikkm/zhTb+IvPDDJyZe0LpZh+5bCE7X+g',
+        'Benoît',
+        'Vandanjon',
+        1
+    );
+
+INSERT INTO
+    users (
+        email,
+        password,
+        firstname,
+        lastname,
+        role
+    )
+VALUES (
+        'anthony.gorski@wildcodeschool.com',
+        '$argon2id$v=19$m=16384,t=2,p=1$k3aFXCpcjyZ2cHpcZPDw3w$gSJbTCadxNikkm/zhTb+IvPDDJyZe0LpZh+5bCE7X+g',
+        'Anthony',
+        'Gorski',
+        1
+    );
+
+INSERT INTO
+    users (
+        email,
+        password,
+        firstname,
+        lastname,
+        role
+    )
+VALUES (
+        'anne.louis@wildcodeschool.com',
+        '$argon2id$v=19$m=16384,t=2,p=1$k3aFXCpcjyZ2cHpcZPDw3w$gSJbTCadxNikkm/zhTb+IvPDDJyZe0LpZh+5bCE7X+g',
+        'Anne',
+        'Louis',
+        0
+    );
+
+INSERT INTO
+    users (
+        email,
+        password,
+        firstname,
+        lastname,
+        role
+    )
+VALUES (
+        'marine.deveza@wildcodeschool.com',
+        '$argon2id$v=19$m=16384,t=2,p=1$k3aFXCpcjyZ2cHpcZPDw3w$gSJbTCadxNikkm/zhTb+IvPDDJyZe0LpZh+5bCE7X+g',
+        'Marine',
+        'Deveza',
+        0
+    );
+
+INSERT INTO
+    users (
+        email,
+        password,
+        firstname,
+        lastname,
+        role
+    )
+VALUES (
+        'trung.nguyen@wildcodeschool.com',
+        '$argon2id$v=19$m=16384,t=2,p=1$k3aFXCpcjyZ2cHpcZPDw3w$gSJbTCadxNikkm/zhTb+IvPDDJyZe0LpZh+5bCE7X+g',
+        'Trung',
+        'Nguyen',
+        0
+    );
+
+INSERT INTO
+    users (
+        email,
+        password,
+        firstname,
+        lastname,
+        role
+    )
+VALUES (
+        'jean.noiraud@gmail.com',
+        '$argon2id$v=19$m=16384,t=2,p=1$k3aFXCpcjyZ2cHpcZPDw3w$gSJbTCadxNikkm/zhTb+IvPDDJyZe0LpZh+5bCE7X+g',
+        'Jean-Baptiste',
+        'Noiraud',
+        0
+    );

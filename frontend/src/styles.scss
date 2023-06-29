@@ -11,9 +11,12 @@
 @use "sass/base/print";
 
 @use "sass/header";
+@use "sass/home";
 @use "sass/contactform";
 @use "sass/contact";
 @use "sass/footer";
 @use "sass/notFound";
+@use "sass/adding";
 @use "sass/signup";
-@use "sass/login"
+@use "sass/login";
+@use "sass/fonts";
