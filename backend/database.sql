@@ -39,8 +39,8 @@ CREATE TABLE smartphones (
     screen VARCHAR(255) NOT NULL,
     network VARCHAR(255) NOT NULL,
     loader TINYINT(1) NOT NULL DEFAULT 1,
-    operating_system VARCHAR(255) NOT NULL,
-    operating_system_version VARCHAR(255) NOT NULL,
+    operatingSystem VARCHAR(255) DEFAULT '',
+    operatingSystemVersion VARCHAR(255),
     images VARCHAR(255),
     screen_size_id INT UNSIGNED, FOREIGN KEY (screen_size_id) REFERENCES screen_sizes(id),
     ram_memory_id INT UNSIGNED, FOREIGN KEY (ram_memory_id) REFERENCES ram_memories(id),
@@ -48,7 +48,7 @@ CREATE TABLE smartphones (
     state_id INT UNSIGNED, FOREIGN KEY (state_id) REFERENCES states(id)
 )  ENGINE = InnoDB CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
-INSERT INTO smartphones (brand, model, ram, storage, screen, network, operating_system, operating_system_version, images)
+INSERT INTO smartphones (brand, model, ram, storage, screen, network, operatingSystem, operatingSystemVersion, images)
 VALUES ('Apple', 'Iphone 12 Pro','6','256','6', '5G', 'IOS', '16','iphone-12pro.jpg'),
        ('Samsung', 'Galaxy S22 Ultra','12','256','6', '5G', 'Android', '13','samsung-galaxys22ultra.jpg'),
        ('Google', 'Pixel 6 Pro','12','256','6', '5G', 'Android', '13','google-pixel6pro.jpg');

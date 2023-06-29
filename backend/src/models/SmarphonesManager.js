@@ -5,18 +5,34 @@ class SmartphonesManager extends AbstractManager {
     super({ table: "smartphones" });
   }
 
-  //   insert() {
-  //     return this.database.query(`insert into ${this.table} (title) values (?)`, [
-  //       item.title,
-  //     ]);
-  //   }
-
-  //   update() {
-  //     return this.database.query(
-  //       `update ${this.table} set title = ? where id = ?`,
-  //       [item.title, item.id]
-  //     );
-  //   }
+  insert(
+    brand,
+    model,
+    ram,
+    storage,
+    screen,
+    network,
+    loader,
+    operatingSystem,
+    operatingSystemVersion,
+    images
+  ) {
+    return this.database.query(
+      `INSERT INTO ${this.table} (brand, model, ram, storage, screen, network, loader, operatingSystem, operatingSystemVersion, images) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      [
+        brand,
+        model,
+        ram,
+        storage,
+        screen,
+        network,
+        loader,
+        operatingSystem,
+        operatingSystemVersion,
+        images,
+      ]
+    );
+  }
 }
 
 module.exports = SmartphonesManager;
