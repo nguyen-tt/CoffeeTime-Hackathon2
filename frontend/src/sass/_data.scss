@@ -7,6 +7,14 @@
     align-items: center;
     justify-content: center;
     font-family: var(--font);
+    .filter-container {
+      margin-bottom: 2rem;
+      font-size: 1.2rem;
+      select {
+        border: 1px solid var(--primary-color);
+        border-radius: 3px;
+      }
+    }
     span {
       font-size: 3rem;
       font-weight: bold;

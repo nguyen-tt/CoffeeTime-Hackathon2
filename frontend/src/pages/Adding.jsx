@@ -59,6 +59,7 @@ export default function Adding() {
                   <option value="xiaomi">Xiaomi</option>
                   <option value="huawei">Huawei</option>
                   <option value="samsung">Samsung</option>
+                  <option value="samsung">Google</option>
                 </select>
               </label>
               <label className="phone-label">
