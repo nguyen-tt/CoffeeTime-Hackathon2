@@ -1,145 +1,194 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function Adding() {
+  const [value, setValue] = useState("default");
+
+  const handleChange = (e) => {
+    setValue(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <>
       <div>
-        <h1 className="phone-spec">Caractéristiques du téléphone</h1>
+        <h1 className="add-phone">Ajouter un téléphone</h1>
       </div>
-      <div className="maker-div">
-        <form className="phone-form">
-          <label className="maker">
-            Marque
-            <br />
-            <select className="maker-select">
-              <option className="choose" disabled="true" value="">
-                Choisir
-              </option>
-              <option value="iphone">iPhone</option>
-              <option value="sony">Sony</option>
-              <option value="xiaomi">Xiaomi</option>
-              <option value="huawei">Huawei</option>
-              <option value="samsung">Samsung</option>
-            </select>
-          </label>
-        </form>
+      <div className="container">
+        <div>
+          <form onSubmit={handleSubmit} className="phone-form">
+            <label className="phone-label">
+              Marque
+              <br />
+              <select
+                defaultValue={value}
+                onChange={handleChange}
+                className="maker-select"
+              >
+                <option className="choose" value="default" disabled hidden>
+                  Choisir
+                </option>
+                <option value="apple">Apple</option>
+                <option value="sony">Sony</option>
+                <option value="xiaomi">Xiaomi</option>
+                <option value="huawei">Huawei</option>
+                <option value="samsung">Samsung</option>
+              </select>
+            </label>
+          </form>
+        </div>
+        <div>
+          <form className="phone-form">
+            <label className="phone-label">
+              Modèle
+              <br />
+              <select
+                defaultValue={value}
+                onChange={handleChange}
+                className="maker-select"
+              >
+                <option className="choose" value="default" disabled hidden>
+                  Choisir
+                </option>
+                <option value="iphone">iphone</option>
+                <option value="sony">sony</option>
+                <option value="xiaomi">xiaomi</option>
+                <option value="huawei">huawei</option>
+                <option value="samsung">samsung</option>
+              </select>
+            </label>
+          </form>
+        </div>
+        <div>
+          <form className="phone-form">
+            <label className="phone-label">
+              RAM
+              <br />
+              <select
+                defaultValue={value}
+                onChange={handleChange}
+                className="maker-select"
+              >
+                <option className="choose" value="default" disabled hidden>
+                  Choisir
+                </option>
+                <option value="30">1 Go</option>
+                <option value="40">2 Go</option>
+                <option value="50">3 Go</option>
+                <option value="60">4 Go</option>
+                <option value="70">6 Go</option>
+                <option value="80">8 Go</option>
+                <option value="90">12 Go</option>
+              </select>
+            </label>
+          </form>
+        </div>
+        <div>
+          <form className="phone-form">
+            <label className="phone-label">
+              Stockage
+              <br />
+              <select
+                defaultValue={value}
+                onChange={handleChange}
+                className="maker-select"
+              >
+                <option className="choose" value="default" disabled hidden>
+                  Choisir
+                </option>
+                <option value="31">16 Go</option>
+                <option value="45">32 Go</option>
+                <option value="66">64 Go</option>
+              </select>
+            </label>
+          </form>
+        </div>
+        <div>
+          <form className="phone-form">
+            <label className="phone-label">
+              Écran
+              <br />
+              <select
+                defaultValue={value}
+                onChange={handleChange}
+                className="maker-select"
+              >
+                <option className="choose" value="default" disabled hidden>
+                  Choisir
+                </option>
+                <option value="40">6"</option>
+                <option value="44">7"</option>
+                <option value="49">8"</option>
+                <option value="53">9"</option>
+              </select>
+            </label>
+          </form>
+        </div>
+        <div>
+          <form className="phone-form">
+            <label className="phone-label">
+              Réseau
+              <br />
+              <select
+                defaultValue={value}
+                onChange={handleChange}
+                className="maker-select"
+              >
+                <option className="choose" value="default" disabled hidden>
+                  Choisir
+                </option>
+                <option value="1">4G</option>
+                <option value="2">5G</option>
+              </select>
+            </label>
+          </form>
+        </div>
+        <div>
+          <form className="phone-form">
+            <label className="phone-label">
+              Chargeur
+              <br />
+              <select
+                defaultValue={value}
+                onChange={handleChange}
+                className="maker-select"
+              >
+                <option className="choose" value="default" disabled hidden>
+                  Choisir
+                </option>
+                <option value="1">Oui</option>
+                <option value="2">Non</option>
+              </select>
+            </label>
+          </form>
+        </div>
+        <div>
+          <form className="phone-form">
+            <label className="phone-label">
+              État
+              <br />
+              <select
+                defaultValue={value}
+                onChange={handleChange}
+                className="maker-select"
+              >
+                <option className="choose" value="default" disabled hidden>
+                  Choisir
+                </option>
+                <option value="0">Parfait</option>
+                <option value="0.90">Très Bon</option>
+                <option value="0.80">Correct</option>
+              </select>
+            </label>
+          </form>
+        </div>
       </div>
-      <div>
-        <form className="phone-form">
-          <label className="maker">
-            Modèle
-            <br />
-            <select className="maker-select">
-              <option className="choose" disabled="true" value="">
-                Choisir
-              </option>
-              <option value="iphone">iphone</option>
-              <option value="sony">sony</option>
-              <option value="xiaomi">xiaomi</option>
-              <option value="huawei">huawei</option>
-              <option value="samsung">samsung</option>
-            </select>
-          </label>
-        </form>
-      </div>
-      <div>
-        <form className="phone-form">
-          <label className="maker">
-            RAM
-            <br />
-            <select className="maker-select">
-              <option className="choose" disabled="true" value="">
-                Choisir
-              </option>
-              <option value="---">---</option>
-              <option value="1">1 Go</option>
-              <option value="2">2 Go</option>
-              <option value="4">4 Go</option>
-              <option value="6">6 Go</option>
-              <option value="8">8 Go</option>
-            </select>
-          </label>
-        </form>
-      </div>
-      <div>
-        <form className="phone-form">
-          <label className="maker">
-            Stockage
-            <br />
-            <select className="maker-select">
-              <option value="---">---</option>
-              <option value="1">1 Go</option>
-              <option value="2">2 Go</option>
-              <option value="4">4 Go</option>
-              <option value="6">6 Go</option>
-              <option value="8">8 Go</option>
-            </select>
-          </label>
-        </form>
-      </div>
-      <div>
-        <form className="phone-form">
-          <label className="maker">
-            Ecran
-            <br />
-            <select className="maker-select">
-              <option value="---">---</option>
-              <option value="1">1 Go</option>
-              <option value="2">2 Go</option>
-              <option value="4">4 Go</option>
-              <option value="6">6 Go</option>
-              <option value="8">8 Go</option>
-            </select>
-          </label>
-        </form>
-      </div>
-      <div>
-        <form className="phone-form">
-          <label className="maker">
-            Réseau
-            <br />
-            <select className="maker-select">
-              <option value="---">---</option>
-              <option value="1">1 Go</option>
-              <option value="2">2 Go</option>
-              <option value="4">4 Go</option>
-              <option value="6">6 Go</option>
-              <option value="8">8 Go</option>
-            </select>
-          </label>
-        </form>
-      </div>
-      <div>
-        <form className="phone-form">
-          <label className="maker">
-            Chargeur
-            <br />
-            <select className="maker-select">
-              <option value="---">---</option>
-              <option value="1">1 Go</option>
-              <option value="2">2 Go</option>
-              <option value="4">4 Go</option>
-              <option value="6">6 Go</option>
-              <option value="8">8 Go</option>
-            </select>
-          </label>
-        </form>
-      </div>
-      <div>
-        <form className="phone-form">
-          <label className="maker">
-            Etat
-            <br />
-            <select className="maker-select">
-              <option value="---">---</option>
-              <option value="1">1 Go</option>
-              <option value="2">2 Go</option>
-              <option value="4">4 Go</option>
-              <option value="6">6 Go</option>
-              <option value="8">8 Go</option>
-            </select>
-          </label>
-        </form>
+      <div className="add-btn-div">
+        <button type="submit" className="add-btn">
+          Ajouter
+        </button>
       </div>
     </>
   );
