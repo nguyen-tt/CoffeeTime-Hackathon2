@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Data from "./pages/Data";
@@ -9,6 +10,7 @@ import Header from "./components/Header";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import CardPage from "./pages/CardPage";
 
 import { CurrentUserProvider } from "./contexts/CurrentUser";
 
@@ -24,6 +26,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/adding" element={<Adding />} />
             <Route path="/data" element={<Data />} />
+            <Route path="/cardpage" element={<CardPage />} />
             <Route path="/faq" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
             <Route path="/login" element={<Login />} />
