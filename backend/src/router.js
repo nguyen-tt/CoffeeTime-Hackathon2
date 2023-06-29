@@ -5,6 +5,7 @@ const router = express.Router();
 const itemControllers = require("./controllers/itemControllers");
 const usersControllers = require("./controllers/usersControllers");
 const loginControllers = require("./controllers/loginControllers");
+const smartphonesControllers = require("./controllers/smartphonesControllers");
 
 const validateLogin = require("./services/validateLogin");
 const validateSignup = require("./services/validateSignup");
@@ -19,6 +20,12 @@ router.delete("/items/:id", itemControllers.destroy);
 router.get("/users", usersControllers.browse);
 router.get("/users/:id", usersControllers.read);
 router.delete("/users/:id", usersControllers.destroy);
+
+router.get("/smartphones", smartphonesControllers.browse);
+router.get("/smartphones/:id", smartphonesControllers.read);
+// router.post("/smartphones/:id", smartphonesControllers.add);
+// router.put("/smartphones/:id", smartphonesControllers.edit);
+router.delete("/smartphones/:id", smartphonesControllers.destroy);
 
 router.post(
   "/login",
