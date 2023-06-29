@@ -41,19 +41,21 @@ CREATE TABLE smartphones (
     loader TINYINT(1) NOT NULL DEFAULT 1,
     operatingSystem VARCHAR(255) DEFAULT '',
     operatingSystemVersion VARCHAR(255),
-    images VARCHAR(255),
     screen_size_id INT UNSIGNED, FOREIGN KEY (screen_size_id) REFERENCES screen_sizes(id),
     ram_memory_id INT UNSIGNED, FOREIGN KEY (ram_memory_id) REFERENCES ram_memories(id),
     storage_value_id INT UNSIGNED, FOREIGN KEY (storage_value_id) REFERENCES storage_values(id),
     state_id INT UNSIGNED, FOREIGN KEY (state_id) REFERENCES states(id)
 )  ENGINE = InnoDB CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
-INSERT INTO smartphones (brand, model, ram, storage, screen, network, operatingSystem, operatingSystemVersion, images)
-VALUES ('Apple', 'Iphone 12 Pro','6','256','6', '5G', 'IOS', '16','iphone-12pro.jpg'),
-       ('Samsung', 'Galaxy S22 Ultra','12','256','6', '5G', 'Android', '13','samsung-galaxys22ultra.jpg'),
-       ('Google', 'Pixel 6 Pro','12','256','6', '5G', 'Android', '13','google-pixel6pro.jpg');
-
-
+INSERT INTO smartphones (brand, model, ram, storage, screen, network, operatingSystem, operatingSystemVersion)
+VALUES ('Apple', 'Iphone 12 Pro','6','256','6', '5G', 'IOS', '16'),
+       ('Samsung', 'Galaxy S22 Ultra','12','256','6', '5G', 'Android', '13'),
+       ('Google', 'Pixel 6 Pro','12','256','6', '5G', 'Android', '13');
+       ('Apple', 'IPhone 8', '8', '2', '64', '4G', 'IOS', '10')
+       ('Samsung', 'Galaxy S10 Plus', '4', '32', '128', '4G', 'Android', '11')
+       ('Xiaomi', 'Xiaomi 13', '6', '32', '128', '4G', 'Android', '12')
+       ('Google', 'Pixel 5 Pro','12','128','6', '5G', 'Android', '14');
+       ('Xiaomi', 'Xiaomi 11', '8', '64', '128', '4G', 'Android', '13')
 
 CREATE TABLE users (
   id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
