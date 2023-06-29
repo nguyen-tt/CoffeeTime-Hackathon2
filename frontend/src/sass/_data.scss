@@ -1,6 +1,7 @@
 .data_page {
   min-height: 80vh;
   margin-top: 3rem;
+  background: url("@assets/bg1.jpg") no-repeat 100%;
   .data-container {
     display: flex;
     flex-direction: column;
@@ -11,6 +12,7 @@
       font-size: 3rem;
       font-weight: bold;
       margin-bottom: 2.5rem;
+      margin-top: 8rem;
     }
     table {
       text-align: center;
