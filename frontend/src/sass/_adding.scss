@@ -1,22 +1,18 @@
-.adding-page {
-  min-height: 80vh;
-}
-
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 100%;
   margin: auto;
   box-sizing: border-box;
+  min-height: 65vh;
 }
 
 .add-phone {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font);
   margin-top: 3rem;
   font-size: 2rem;
 }
@@ -41,7 +37,7 @@
 }
 
 .phone-label {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font);
   font-size: 2rem;
   margin-left: 5rem;
 }
@@ -62,7 +58,7 @@
   transition: all 0.5s ease;
   color: white;
   border: 3px solid #00acb0;
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font);
   font-weight: bold;
   text-transform: uppercase;
   text-align: center;
@@ -97,7 +93,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font);
     margin-top: 3rem;
     font-size: 2rem;
   }
@@ -122,7 +118,7 @@
   }
 
   .phone-label {
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font);
     font-size: 2rem;
     margin-left: 5rem;
   }
@@ -143,7 +139,7 @@
     transition: all 0.5s ease;
     color: white;
     border: 3px solid #00acb0;
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font);
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
@@ -163,6 +159,8 @@
 
 @media screen and (min-width: 1200px) {
   .container {
+    position: relative;
+    right: 13rem;
     display: grid;
     justify-content: center;
     align-items: center;
@@ -173,13 +171,23 @@
     max-width: 60rem;
     margin: auto;
     box-sizing: border-box;
+    p {
+      position: relative;
+      top: 20rem;
+      font-size: 2rem;
+      font-family: var(--font);
+    }
+    .form-container {
+      position: relative;
+      top: 25rem;
+    }
   }
 
   .add-phone {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font);
     margin-top: 3rem;
     font-size: 3rem;
   }
@@ -204,7 +212,7 @@
   }
 
   .phone-label {
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font);
     font-size: 2rem;
     margin-left: 5rem;
   }
@@ -224,7 +232,7 @@
     transition: all 0.5s ease;
     color: white;
     border: 3px solid #00acb0;
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font);
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;

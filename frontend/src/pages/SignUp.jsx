@@ -114,7 +114,7 @@ export default function SignUp() {
                 autoComplete="new-password"
                 required
                 onChange={handlePassword}
-                placeholder="Votre mot de passe *"
+                placeholder="Mot de passe *"
               />
             </p>
             <p>
@@ -132,7 +132,7 @@ export default function SignUp() {
                 value={confirmPassword}
                 required
                 onChange={handleConfirmPassword}
-                placeholder="Confirmez votre mot de passe *"
+                placeholder="Confirmation du mot de passe *"
               />
             </p>
             <p className="validate-signup">
