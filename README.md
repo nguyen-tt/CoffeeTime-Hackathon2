@@ -1,4 +1,6 @@
-## 24h hackahton in collaboration with @AnneL51100, @MarineDeveza, @jbaptiste51
+## COFFEE TIME X EMMAUS CONNECT
+
+# 24h hackathon in collaboration with @AnneL51100, @MarineDeveza, @jbaptiste51
 
 
 ## Setup & Use
