@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
 
+import CurrentUserContext from "../contexts/CurrentUser";
+import NotFound from "./NotFound";
+
 export default function Adding() {
+  const { currentUser } = useContext(CurrentUserContext);
   const [phoneData, setPhoneData] = useState({});
   const [isAdded, setIsAdded] = useState(false);
 
@@ -28,6 +32,8 @@ export default function Adding() {
 
   return (
     <>
+    {currentUser.isAdmin ? (
+     <div className="adding-page">
       <div>
         <h1 className="add-phone">Ajouter un téléphone</h1>
       </div>
@@ -183,6 +189,10 @@ export default function Adding() {
           Ajouter
         </button>
       </div>
+</div>
+) : (
+        <NotFound />
+      )}
     </>
   );
 }

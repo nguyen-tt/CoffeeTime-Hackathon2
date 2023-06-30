@@ -14,11 +14,10 @@ class SmartphonesManager extends AbstractManager {
     network,
     loader,
     operatingSystem,
-    operatingSystemVersion,
-    images
+    operatingSystemVersion
   ) {
     return this.database.query(
-      `INSERT INTO ${this.table} (brand, model, ram, storage, screen, network, loader, operatingSystem, operatingSystemVersion, images) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      `INSERT INTO ${this.table} (brand, model, ram, storage, screen, network, loader, operatingSystem, operatingSystemVersion) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         brand,
         model,
@@ -29,7 +28,6 @@ class SmartphonesManager extends AbstractManager {
         loader,
         operatingSystem,
         operatingSystemVersion,
-        images,
       ]
     );
   }

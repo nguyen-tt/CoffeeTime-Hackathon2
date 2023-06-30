@@ -1,51 +1,98 @@
-.home-text {
-  position: relative;
-}
-.text-on-image {
-  position: absolute;
-  right: 10%;
-  left: 20%;
-  bottom: 90%;
-}
-
-h3 {
-  color: white;
-  font-family: "PermanentMarker-Regular.ttf";
-  font-size: 1rem;
-}
-
-@media screen and (min-width: 600px) {
-  .home-text {
+.home {
+  min-height: 100vh;
+  margin: 0 0 5rem 0;
+  .hero {
     position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    height: 50vw;
+    min-height: 400px;
+    max-height: 550px;
+    min-width: 300px;
+    color: #eee;
   }
-  .text-on-image {
+  .hero:after {
+    content: "";
+    width: 100%;
+    height: 100%;
     position: absolute;
-    right: 10%;
-    left: 20%;
-    bottom: 90%;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.12) 40%,
+      rgba(27, 32, 48, 1) 100%
+    );
+  }
+  .hero:before {
+    content: "";
+    width: 100%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    background: white url(@assets/home.jpg) 50% 0 no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    animation: grow 360s linear 10ms infinite;
+    transition: all 0.4s ease-in-out;
+    z-index: -2;
   }
 
-  h3 {
-    color: white;
-    font-family: "PermanentMarker-Regular.ttf";
-    font-size: 2rem;
+  @keyframes grow {
+    0% {
+      transform: scale(1) translateY(0px);
+    }
+    50% {
+      transform: scale(1.2) translateY(-400px);
+    }
   }
-}
-
-@media screen and (min-width: 1200px) {
-  .home-text {
+  .linkhome-button {
     position: relative;
+    top: 70%;
+
+    button {
+      font-family: var(--font);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+      background-color: var(--primary-color);
+      border: 3px solid var(--primary-color);
+      border-radius: 12px;
+      outline: none;
+      padding: 12px;
+      margin-top: 3rem;
+      transition: all 0.5s ease;
+      cursor: pointer;
+    }
   }
-  .text-on-image {
-    position: absolute;
-    right: 10%;
-    left: 20%;
-    bottom: 90%;
+  button:hover {
+    color: grey;
+    background-color: white;
   }
 
-  h3 {
-    color: white;
-    font-family: "PermanentMarker-Regular.ttf";
-    font-size: 6rem;
+  .home-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h1 {
+      font-family: "PermanentMarker-Regular.ttf";
+      font-size: 3.5rem;
+      margin: 3rem 0;
+    }
+    p {
+      width: 80%;
+      font-size: 1.7rem;
+      font-family: var(--font);
+    }
   }
 }

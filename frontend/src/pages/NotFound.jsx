@@ -1,3 +1,5 @@
+import logo404 from "../assets/logo404.svg";
+
 export default function NotFound() {
   return (
     <div className="notfound">
@@ -8,8 +10,7 @@ export default function NotFound() {
         <div className="cup-handle" />
       </div>
       <div className="notfound-text">
-        <span>404</span>
-        <span>Take a coffee and relax</span>
+        <img src={logo404} alt="404" className="logo404" />
       </div>
     </div>
   );

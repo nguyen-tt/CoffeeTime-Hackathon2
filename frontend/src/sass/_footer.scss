@@ -55,6 +55,7 @@
     }
     .footer-text {
       display: flex;
+      flex-direction: row;
       justify-content: space-evenly;
       width: 70%;
       font-size: 2rem;
